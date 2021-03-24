@@ -11,6 +11,9 @@ const pressTop = document.querySelector('.nav__press--top');
 const pressBottom = document.querySelector('.nav__press--bottom');
 const listTop = document.querySelector('.list--top');
 const listBottom = document.querySelector('.list--bottom');
+const form = document.querySelector('.feedback__form');
+const inputs = document.querySelectorAll('.form__input');
+
 
 burger.addEventListener('click', () => {
   nav.classList.toggle('nav--mobile');
@@ -50,4 +53,9 @@ listBottom.addEventListener('click', (event) => {
   pressBottom.innerText = event.target.innerText;
   listBottom.classList.toggle('list--open');
   pressBottom.style.display = 'block';
+});
+
+form.addEventListener('submit', (event)=> {
+  event.preventDefault();
+  inputs.forEach(input => input.value = '');
 });
